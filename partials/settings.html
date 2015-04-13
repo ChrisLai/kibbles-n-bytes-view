@@ -1,0 +1,48 @@
+<div class="container" ng-controller="settingController">
+
+    <form class="row settings-container">
+        <form novalidate class="simple-form ">
+            <div class="col-md-6">
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="check1" name="nick" ng-change="checkPost(check1, 'Nick')" type="checkbox"> Nick
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="check2" name="nick" ng-change="checkPost(check2, 'Ben')" type="checkbox"> Ben
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="check3" name="nick" ng-change="checkPost(check3, 'Ashley')" type="checkbox"> Ashley
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="check4" name="nick" ng-change="checkPost(check4, 'Harsh')" type="checkbox"> Harsh
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input ng-model="check5" name="nick" ng-change="checkPost(check5, 'Lindsy')" type="checkbox"> Lindsy
+                    </label>
+                </div>
+
+
+            </div>
+            <div ng-controller="TimepickerDemoCtrl" class="col-md-6">
+                Alarm Name: <input type="text" name="input" ng-model="mytitle"><br />
+                <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+
+                <button type="submit" ng-click="submit()" class="btn btn-default pull-right">Submit</button>
+            </div>
+
+        </form>
+    </form>
+
+</div>

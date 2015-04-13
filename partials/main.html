@@ -1,0 +1,84 @@
+<!-- Custom Angular -->
+<div class="container" ng-controller="feederController">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <object type="image/svg+xml" data="assets/happy-dog.svg" class="svgIcon">
+                    Happy Dog <!-- fallback image in CSS -->
+                </object>
+                <!--<img src="assets/happy-dog.svg" class="happy-dog">-->
+                <!--<img src="assets/sad-dog.svg" class="sad-dog">-->
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center"> {{ currentFeeder.name }} fed the dog
+                    <div class="time-container">
+                        <span class="hours">{{ currentFeederAgoTime[0] }}</span>
+                        <span>{{ currentFeederAgoTime[1] +' ' +currentFeederAgoTime[2] }}</span>
+                    </div>
+
+                </h2>
+            </div>
+        </div>
+
+
+    </div>
+    <h2 ng-hide="(feeder | lastFed:'today').length == 0">Today</h2>
+    <div class="panel panel-default" ng-repeat="person in feeder | orderBy:'-date' | lastFed:'today'">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <object type="image/svg+xml" data="assets/dog-food.svg" class="svgIcon">
+                        Dog Bag <!-- fallback image in CSS -->
+                    </object>
+                </div>
+                <div class="col-md-8 text-center panel-feeder_name">
+                    {{ person.name }}
+                </div>
+                <div class="col-md-2 date-container">
+                    <span class="date-data text-muted">{{ person.date | date:'shortTime'}} on {{ person.date | date: 'shortDate' }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 ng-hide="(feeder | lastFed:'yesterday').length == 0">Yesterday</h2>
+    <div class="panel panel-default" ng-repeat="person in feeder | orderBy:'-date' | lastFed:'yesterday'">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <object type="image/svg+xml" data="assets/dog-food.svg" class="svgIcon">
+                        Dog Bag <!-- fallback image in CSS -->
+                    </object>
+                </div>
+                <div class="col-md-8 text-center panel-feeder_name">
+                    {{ person.name }}
+                </div>
+                <div class="col-md-2 date-container">
+                    <span class="date-data text-muted">{{ person.date | date:'shortTime'}} on {{ person.date | date: 'shortDate' }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 ng-hide="(feeder | lastFed:'twoDayAgo').length == 0">Two Days Ago</h2>
+    <div class="panel panel-default" ng-repeat="person in feeder | orderBy:'-date' | lastFed:'twoDayAgo'">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <object type="image/svg+xml" data="assets/dog-food.svg" class="svgIcon">
+                        Dog Bag <!-- fallback image in CSS -->
+                    </object>
+                </div>
+                <div class="col-md-8 text-center panel-feeder_name">
+                    {{ person.name }}
+                </div>
+                <div class="col-md-2 date-container">
+                    <span class="date-data text-muted">{{ person.date | date:'shortTime'}} on {{ person.date | date: 'shortDate' }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of custom Angular -->

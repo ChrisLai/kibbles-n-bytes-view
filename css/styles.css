@@ -1,0 +1,48 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+body{
+    padding-top: 80px;
+}
+
+.panel-body {
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.svgIcon{
+    display: block;
+    margin: 0 auto;
+}
+
+.hours{
+    padding: 0px 7px;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 80px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .7);
+    background-color: rgba(0,0,0,.45);
+}
+.panel-feeder_name{
+    font-size: 36px;
+    font-weight: 700;
+}
+.date-container{
+    position:relative;
+    height: 50px;
+}
+.date-data{
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    
+}
+.time-container{
+    margin-top: 10px;
+}
+
+.settings-container{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
